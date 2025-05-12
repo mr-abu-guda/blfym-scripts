@@ -1,0 +1,263 @@
+
+:root {
+  --audio-primary: #16a085;
+  --audio-light: #1abc9c;
+  --audio-dark: #0d8a72;
+  --bg-light: #f9f9f9;
+  --text-dark: #2c3e50;
+  --text-light: #ecf0f1;
+  --border-radius: 16px;
+  --transition: all 0.3s ease;
+}
+
+#ahmed {
+  background: linear-gradient(145deg, var(--audio-primary), var(--audio-dark));
+  padding: 25px;
+  border-radius: var(--border-radius);
+  margin: 30px auto;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  color: var(--text-light);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid rgba(255,255,255,0.1);
+position: relative;
+}
+
+#ahmed > img {
+  max-width: 97%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  border: 3px solid white;
+  transition: var(--transition);
+}
+
+#ahmed > img:hover {
+  transform: scale(1.02);
+}
+
+#quran-blfym-lis {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: rgba(255,255,255,0.9);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+  scrollbar-width: thin;
+  scrollbar-color: var(--audio-light) #f1f1f1;
+}
+
+/* تصميم شريط التمرير */
+#quran-blfym-lis::-webkit-scrollbar {
+  width: 6px;
+}
+
+#quran-blfym-lis::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#quran-blfym-lis::-webkit-scrollbar-thumb {
+  background-color: var(--audio-light);
+  border-radius: 10px;
+}
+
+#quran-blfym-lis > div {
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: var(--transition);
+  color: var(--text-dark);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  margin: 3px 0;
+  font-size: 15px;
+}
+
+#quran-blfym-lis > div:nth-child(2n+1) {
+  background-color: rgba(239, 239, 239, 0.7);
+}
+
+#quran-blfym-lis > div:hover {
+  background-color: var(--audio-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#quran-blfym-lis > div.activefile {
+  background-color: var(--audio-light);
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+#quran-blfym-lis > div.activefile::after {
+font-size: 30px;
+  content: "▶";
+  position: absolute;
+  left: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.blfym-sectio {
+  width: 100%;
+  background-color: white;
+  padding: 12px 15px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+#blfymSelect {
+  flex-grow: 1;
+  padding: 10px 12px;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+#blfymSelect:hover {
+  border-color: var(--audio-light);
+}
+
+#blfymSelect:focus {
+  outline: none;
+  border-color: var(--audio-primary);
+  box-shadow: 0 0 0 2px rgba(22, 160, 133, 0.2);
+}
+
+#blfym-tash {
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 40px;
+}
+
+.auto-blfym {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 12px 15px;
+  border-radius: var(--border-radius);
+  width: 100%;
+  justify-content: space-between;
+  color: #555;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-weight: 500;
+}
+
+.hamo {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.hamo input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.auto-blfym-slide {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ddd;
+  transition: var(--transition);
+  border-radius: 34px;
+}
+
+.auto-blfym-slide:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: var(--transition);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.auto-blfym input:checked + .auto-blfym-slide {
+  background-color: #27ae60;
+}
+
+.auto-blfym input:checked + .auto-blfym-slide:before {
+  transform: translateX(22px);
+}
+
+.ahmed-head {
+  text-align: center;
+  width: 100%;
+}
+
+.ahmed-head h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+}
+
+.ahmed-head p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(13px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#ahmed > * {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+#ahmed > img {
+  animation-delay: 0.1s;
+}
+
+.blfym-sectio {
+  animation-delay: 0.2s;
+}
+
+#quran-blfym-lis {
+  animation-delay: 0.3s;
+}
+
+.auto-blfym {
+  animation-delay: 0.4s;
+}
+
+b {
+  display: none;
+}
